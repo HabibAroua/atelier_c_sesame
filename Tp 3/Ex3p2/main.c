@@ -15,14 +15,12 @@ int main()
              if(i%j==0)
              {
                 s=s+j;
-
-
              }
         }
 
         if(s==i)
         {
-            printf("%d est parfait \n");
+            printf("%d est parfait \n",i);
         }
     }
     return 0;
