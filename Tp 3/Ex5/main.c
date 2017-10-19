@@ -6,7 +6,7 @@ int main()
     printf("Donner un valeur n\n");
     scanf("%d",&n);
     float estim=0;
-    for(int i=1;i<n;i++)
+    for(int i=1;i<n;i+=2)
     {
        estim=estim+(1/i);
     }
