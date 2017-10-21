@@ -1,6 +1,5 @@
 #include <stdio.h>
-
-int main()
+void main()
 {
     int n,p,i,max,min;
     printf("Donner n \n");
@@ -10,7 +9,7 @@ int main()
     {
         for(int j=0;j<=i;j++)
         {
-          printf("*");
+          printf("+");
         }
         printf("\n");
         i++;
@@ -18,11 +17,11 @@ int main()
     printf("\n \n");
 
     i=0;
-    while(i!=n)
+    while(i!=n-1)
     {
         for(int j=0;j<n;j++)
         {
-           printf("*");
+           printf("+");
         }
         printf("\n");
         i++;
@@ -36,13 +35,14 @@ int main()
     max=n/2+1;
     min=n/2+1;
     int h=0;
-    while((max!=n+3) && (min!=-3) && (h<n) )
+    while((max!=n+1) && (min!=-1) && (h!=n) )
     {
          for(int i=0;i<=max;i++)
          {
              if((i>=min)&&(i<=max))
              {
-                printf("*");
+                printf("+");
+
              }
              else
              {
@@ -57,14 +57,14 @@ int main()
 
     max=n/2+1;
     min=n/2+1;
-     h=0;
-    while((max!=n) && (min!=0) && (h<n) )
+    h=0;
+    while((max!=n) && (min!=0) && (h+1!=n) )
     {
          for(int i=0;i<=max;i++)
          {
              if((i>=min)&&(i<=max))
              {
-                printf("*");
+                printf("+");
              }
              else
              {
@@ -77,16 +77,16 @@ int main()
          min--;
     }
 
-    max=n;
-    min=0;
-     h=0;
-    while((max!=min) && (h<n) )
+    max=n+1;
+    min=1;
+    h=1;
+    while((min!=max+2) && (h-1<n) && (min!=n/2+5))
     {
          for(int i=0;i<=max;i++)
          {
              if((i>=min)&&(i<=max))
              {
-                printf("*");
+                printf("+");
              }
              else
              {
@@ -98,5 +98,4 @@ int main()
          max--;
          min++;
     }
-    return 0;
 }

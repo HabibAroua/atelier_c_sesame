@@ -3,7 +3,6 @@
 int main()
 {
     int n, reste2,reste8,reste16;
-    char tab[100];
     do
     {
         printf("Donner un nombre decimal \n");
@@ -64,9 +63,6 @@ int main()
        }
 
     }
-
-
-
 
     return 0;
 }
