@@ -1,5 +1,5 @@
 #include <stdio.h>
-void main()
+int main()
 {
     int n,i,r,test;
     printf("Donner un entier\n");
@@ -18,5 +18,6 @@ void main()
     {
          printf("Ce nombre est premier \n");
     }
+    return 0;
 }
 //zayneb.layouni@sesame.com.tn
