@@ -22,8 +22,5 @@ int main()
     {
        printf("Ce nombre est non parfait \n");
     }
-
-
-
     return 0;
 }

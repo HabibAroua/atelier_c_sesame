@@ -17,9 +17,9 @@ int main()
     }
 
     int s2=1;
-    for(int i=2;i<=n1;i++)
+    for(int i=2;i<=n2;i++)
     {
-        if(n1%i==0)
+        if(n2%i==0)
         {
             s2+=i;
         }
