@@ -1,11 +1,10 @@
 #include <stdio.h>
-
 int main()
 {
-    const int max=200;
+    const int MAX=100;
     int n=0,i;
     int test;
-    while(n!=max)
+    while(n!=MAX)
     {
         for(i=2;i<n/2;i++)
         {
@@ -21,8 +20,8 @@ int main()
         }
         if(test)
         {
-            int res=4;
-            for(int j=0;j<6;j++)
+            int res=pow(2,2);
+            for(int j=0;j<12;j++)
             {
                 if(res-1==n)
                 {

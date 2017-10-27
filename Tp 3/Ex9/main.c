@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int main()
 {
@@ -12,12 +11,12 @@ int main()
 
        if(u%2==0)
        {
-           u=u-(1/2);
+           u=u/2;
            printf("le terme %d est %d \n",i,u);
        }
        else
        {
-           u=3*u;
+           u=3*u+1;
            printf("le terme %d est %d \n",i,u);
        }
        i++;
