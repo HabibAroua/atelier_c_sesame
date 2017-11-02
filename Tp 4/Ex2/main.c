@@ -11,7 +11,7 @@ int main()
 
     for(i=0;i<n;i++)
     {
-        printf("Remplir la case %d \n",i);
+        printf("Remplir la case %d \n",i+1);
         scanf("%d",&tab[i]);
     }
     printf("Donner un nombre \n");
