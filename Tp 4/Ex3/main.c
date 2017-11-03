@@ -15,7 +15,7 @@ int main()
         scanf("%d", &T[i]);
     }
     printf("Donnez la position d'insertion de la valeur qui doit etre inferieur ou egal a %d \n",n);
-    scanf("%d", &k);
+    scanf("%d", &kco);
     while (k>n || k<0)
     {
         printf("Erreur (la position doit etre entre 0 et 5).\n\n Recommencez :\t");
