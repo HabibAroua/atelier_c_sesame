@@ -1,6 +1,4 @@
 #include <stdio.h>
-
-
 int main()
 {
     int T[100], val;
@@ -25,18 +23,16 @@ int main()
     }
     printf("Donnez la valeur a inserer\n");
     scanf("%d", &val);
-    for(i=0; i<k; i++)
+
+    for(i=n;i>k;i--)
     {
-        T[i]=T[i+1];
+       T[i]=T[i-1];
     }
     T[k]=val;
-    printf("Le tableau apres insertion de la valeur\n\n");
-    for(i=0; i<n; i++)
-    {
-        printf("%d | ", T[i]);
-    }
 
-    printf("\n");
-    printf("%d ",T[0]);
+    for(i=0;i<n;i++)
+    {
+        printf("%d | ",T[i]);
+    }
     return 0;
 }
