@@ -4,6 +4,7 @@ int main()
 {
     int mat1[100][100] ;
     int mat2[100][100] ;
+    int mat3[100][100] ;
     int n,i,j;
     do
     {
@@ -45,6 +46,24 @@ int main()
         for(j=0;j<n;j++)
         {
            printf("%d ",mat2[i][j]);
+        }
+        printf("\n");
+    }
+
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+           mat3[i][j]=mat1[i][j]+mat2[i][j];
+        }
+        printf("\n");
+    }
+    printf("La somme de deux matrices \n");
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+           printf("%d ",mat3[i][j]);
         }
         printf("\n");
     }
