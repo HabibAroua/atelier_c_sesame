@@ -1,10 +1,10 @@
 #include <stdio.h>
-
 int main()
 {
     int mat1[100][100] ;
     int mat2[100][100] ;
     int mat3[100][100] ;
+    int mat4[100][100] ;
     int n,i,j;
     do
     {
