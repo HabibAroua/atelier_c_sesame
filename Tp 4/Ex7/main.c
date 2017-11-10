@@ -39,7 +39,7 @@ int main()
         }
         printf("\n");
     }
-
+    printf("\n");
     printf("Afficher la matrice 2 \n");
     for(i=0;i<n;i++)
     {
@@ -49,7 +49,7 @@ int main()
         }
         printf("\n");
     }
-
+    printf("\n");
     for(i=0;i<n;i++)
     {
         for(j=0;j<n;j++)
@@ -58,12 +58,32 @@ int main()
         }
         printf("\n");
     }
+    printf("\n");
     printf("La somme de deux matrices \n");
     for(i=0;i<n;i++)
     {
         for(j=0;j<n;j++)
         {
            printf("%d ",mat3[i][j]);
+        }
+        printf("\n");
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+           printf("%d | ",mat2[j][i]);
+           mat4[i][j]+=(mat1[i][j]*mat2[j][i]);
+        }
+
+    }
+    printf("\n");
+    printf("Le produit de deux matrices \n");
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+           printf("%d ",mat4[i][j]);
         }
         printf("\n");
     }
