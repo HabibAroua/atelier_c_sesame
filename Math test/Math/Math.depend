@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1510358347 source:/home/habib/Documents/atelier_c_sesame-master/Math test/Math/main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
