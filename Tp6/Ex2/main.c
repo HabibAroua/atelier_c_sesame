@@ -12,7 +12,7 @@ void main()
     scanf("%d",&n);
     for(i=0;i<n;i++)
     {
-        printf("tapez la case %d \n",i);
+        printf("tapez la case %d \n",i+1);
         scanf("%d",&tab[i]);
     }
 
