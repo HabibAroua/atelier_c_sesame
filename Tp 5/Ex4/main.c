@@ -1,76 +1,65 @@
 #include <stdio.h>
-#include<string.h>
+#include <string.h>
 
-int main()
+void main()
 {
-   char ch1[50]; char ch2[50]; char chInter1[50]; char chInter2[50];
-   char aux;
-   int j,i;
-    do
-    {
-        puts("Donner une chaine 1");
-        gets(ch1);
-        puts("Donner une chaine 2");
-        gets(ch2);
-    }while((strlen(ch1)%2!=0) && (strlen(ch2)%2!=0));
-    //inverse la chaine ch1
-    j=strlen(ch1)-1;
-    i=0;
-    while(j!=-1 && i!=strlen(ch1)  && j>i )
-    {
-        aux=ch1[j];
-        ch1[j]=ch1[i];
-        aux=ch1[i]=aux;
-        j--;
-        i++;
-    }
-    printf("La chaine ch1 est %s \n",ch1);
+    char ch[50],ch0[50] ,ch1[50] , ch2[50] , ch10[50]="" ,ch20[50]="",ch11[50]="" , ch21[50]="";
+    int l1,l2,i,j;
 
-    //onverse la chaine ch2
-    j=strlen(ch2)-1;
-    i=0;
-    while(j!=-1 && i!=strlen(ch2)  && j>i )
-    {
-        aux=ch2[j];
-        ch2[j]=ch2[i];
-        aux=ch2[i]=aux;
-        j--;
-        i++;
-    }
-    j=0;
-    for (i=strlen(ch1)/2;i<strlen(ch1);i++)
-    {
-         printf("%c \n",ch1[i]);
-         chInter1[j]=ch1[i];
-         ch1[i]="";
-         j++;
-    }
-    printf("Afficher chInter1 \n");
-    for (i=0;i<strlen(chInter1);i++)
-    {
-         printf("%c \n",chInter1[i]);
-    }
-    printf("Afficher ch1 \n");
-    for (i=0;i<strlen(ch1);i++)
-    {
-         printf("%c \n",ch1[i]);
-    }
-    //********************************************
-    for (i=strlen(ch2)/2;i<strlen(ch2);i++)
-    {
-         printf("%c \n",ch2[i]);
-         chInter2[j]=ch2[i];
-         ch2[i]="";
-         j++;
-    }
-    //*************************************************
-    j=0;
-    for (i=strlen(ch1)/2;i<=strlen(ch1);i++)
-    {
-         ch1[i]=chInter2[j];
-         j++;
-    }
-    printf("La chaine modifier est %s \n",ch1);
+    do{
+    puts("Donner une chaine 1 de taille paire");
+    gets(ch);
+    l1=strlen(ch);
+    } while(l1%2!=0);
 
-    return 0;
+    do{
+    puts("Donner une chaine 2 de taille paire");
+    gets(ch0);
+    l2=strlen(ch0);
+    } while(l2%2!=0);
+
+    for(i=0;i<l1;i++)
+    {
+      ch1[i]=ch[l1-i-1];
+    }
+    puts(ch1);
+
+    for(i=0;i<l2;i++)
+    {
+       ch2[i]=ch0[l2-i-1];
+    }
+    puts(ch2);
+
+    strncat(ch10,ch1,l1/2);
+  //  puts(ch10);
+
+    strncat(ch20,ch2,l2/2);
+   // puts(ch20);
+
+    for(i=l1/2;i<l1;i++)
+    {
+      ch11[i-(l1/2)]=ch1[i];
+    }
+   // puts(ch11);
+
+    for(i=l2/2;i<l2;i++)
+    {
+      ch21[i-(l2/2)]=ch2[i];
+    }
+   // puts(ch21);
+
+    strcat(ch10,ch21);
+    puts(ch10);
+
+    strcat(ch11,ch20);
+    puts(ch11);
+
+  if(strcmp(ch11,ch10)!=0)
+  {
+    printf("les chaines ne sont pas egaux ! \n");
+  }
+  else
+  {
+    printf("Les deux chaines sont egaux \n");
+  }
 }

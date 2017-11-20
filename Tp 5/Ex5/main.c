@@ -1,26 +1,51 @@
 #include <stdio.h>
 #include <string.h>
 
-int main()
+void main()
 {
-    char ch1[50]; char ch2[50]; char ch3[50];
-    int j,i,k;
-    puts("Donner une chaine 1");
+    char ch1[50] , ch2[50] , ch3[50]="";
+    int i,j,k=0,x=0,y=0,z=0;
+
+
+    puts("Donner la chaine 1");
     gets(ch1);
-    puts("Donner une chaine 2");
+
+
+
+    puts("Donner la chaine 2");
     gets(ch2);
-    j=0; k=-1;
-    while(j!=strlen(ch1))
+
+
+  for(i=0;i<strlen(ch2);i++)
+  {
+    for(j=0;j<strlen(ch1);j++)
     {
-         for(i=0;i<strlen(ch2);i++)
-         {
-             if(ch2[i]==ch1[j])
-             {
-                 ch3[k++]=ch2[i];
-             }
-         }
-         j++;
+      if(ch2[i]==ch1[j])
+      {
+        ch3[k]=ch2[i];
+        k++;
+      }
     }
-    printf("La chaine est %s \n",ch3);
-    return 0;
+  }
+
+  while(x<strlen(ch3)-1)
+  {
+
+    y=x+1;
+    while(y<strlen(ch3))
+    {
+      if(ch3[y]==ch3[x])
+      {
+        for(z=y;z<strlen(ch3)-1;z++)
+        {
+          ch3[z]=ch3[z+1];
+        }
+        ch3[strlen(ch3)-1]='\0';
+      }
+      y++;
+    }
+    x++;
+  }
+
+ puts(ch3);
 }
