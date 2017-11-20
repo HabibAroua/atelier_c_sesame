@@ -3,7 +3,7 @@
 int carre(int n);
 int main()
 {
-    float c=4*atan(1);
+    const float  PI=4*atan(1);
     int n,i;
     float s;
     printf("Donner un valeur n \n");
@@ -16,7 +16,7 @@ int main()
         s=s+1/(pow(i,2)+p);
     }
     printf("La valeur est %f \n",4*n*s);
-    printf("la valeur de pi est %f \n",c);
+    printf("la valeur de pi est %f \n",PI);
     return 0;
 }
 
