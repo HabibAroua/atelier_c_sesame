@@ -3,21 +3,20 @@
 int carre(int n);
 int main()
 {
+    float c=4*atan(1);
     int n,i;
     float s;
     printf("Donner un valeur n \n");
     scanf("%d",&n);
     i=0;
     s=0;
-    while(i!=n)
+    float p=pow(n,2);
+    for (i=0;i<=n;i++)
     {
-        s=s+(1/n+carre(i));
-        i++;
+        s=s+1/(pow(i,2)+p);
     }
-    printf("Le valeur est %f \n",4*sqrt(s));
+    printf("La valeur est %f \n",4*n*s);
+    printf("la valeur de pi est %f \n",c);
     return 0;
 }
-int carre(int n)
-{
-    return n*n;
-}
+
