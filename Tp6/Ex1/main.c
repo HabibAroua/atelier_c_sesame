@@ -38,7 +38,7 @@ int PlusSouvent(int tab[10],int n)
     for(i=0;i<n;i++)
     {
         occ=tab[i];
-        for(j=0;j<n;j++)
+        for(j=i;j<n;j++)
         {
             if(tab[j]==occ)
             {
