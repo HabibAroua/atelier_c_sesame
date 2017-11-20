@@ -3,6 +3,7 @@
 int tab[10];
 void SaisirTab(int tab[10],int n);
 int PlusSouvent(int tab[10],int n);
+void AfficherTab(int tab[10],int b);
 
 int main()
 {
@@ -12,6 +13,8 @@ int main()
     scanf("%d",&n);
     SaisirTab(tab,n);
     printf("La valeur qui apparait le plus souvent dans le tableau est %d \n",PlusSouvent(tab,n));
+    printf("\n");
+    AfficherTab(tab,n);
     return 0;
 }
 
@@ -53,4 +56,13 @@ int PlusSouvent(int tab[10],int n)
         nocc=0;
     }
     return eps;
+}
+
+void AfficherTab(int tab[10],int n)
+{
+    int i;
+    for(i=0;i<n;i++)
+    {
+        printf("%d | ",tab[i]);
+    }
 }
