@@ -31,11 +31,9 @@ int main(void)
                 if( j < taille-1)
                 {
                     t[j] = t[j+1];
-
                 }
                else
                 {
-                    t[j] = 0;
                     taille--;
                 }
              }
