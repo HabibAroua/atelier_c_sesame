@@ -14,6 +14,6 @@ int main()
     printf("La valuer de *p est %d \n",*p);
     printf("La valeur de p est  est %d \n",p);
     printf("La valeur de a est %d \n",a);
-        printf("La valeur de b est %d \n",b);
+    printf("La valeur de b est %d \n",b);
     return 0;
 }
