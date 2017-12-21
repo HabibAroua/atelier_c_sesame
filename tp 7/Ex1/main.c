@@ -46,6 +46,19 @@ void initialiser_taquin(int tab[4][4])
             }
         }
 
+        for(i=0;i<4;i++)
+        {
+            for(j=0;j<4;j++)
+            {
+                 test=occurance(tab,tab[i][j]);
+                 if(test>1)
+                 {
+                      tab[i][j]=rand()%15;
+                 }
+            }
+        }
+
+
 }
 
 void afficher(int tab[4][4])
