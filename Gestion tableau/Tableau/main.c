@@ -2,8 +2,9 @@
 #include <stdlib.h>
 
 void saisie(int *n);
-void remplir(int n, int *tab);
-void afficher(int n,int tab[50]);
+void remplir(int n , int *tab);
+void afficher(int n , int tab[50]);
+void insertion(int e , int p , int *n , int *tab);
 
 int main()
 {
@@ -12,6 +13,10 @@ int main()
     saisie(&n);
     remplir(n,tab);
     afficher(n,tab);
+    printf("\n");
+    insertion(15,2,&n,tab);
+    afficher(n,tab);
+    printf("la valeur de n2 est %d \n",n);
     return 0;
 }
 
@@ -26,7 +31,7 @@ void saisie(int *n)
     *n=x;
 }
 
-void remplir(int n, int *tab)
+void remplir(int n , int *tab)
 {
     int i;
     for (i=0;i<=n;i++)
@@ -36,11 +41,31 @@ void remplir(int n, int *tab)
     }
 }
 
-void afficher(int n,int tab[50])
+void afficher(int n , int tab[50])
 {
      int i;
      for(i=0;i<=n;i++)
      {
          printf("%d |",tab[i]);
+     }
+}
+
+void insertion(int e , int p , int *n , int *tab)
+{
+
+     int i;
+     if(*n+1==p)
+     {
+          tab[p]=e;
+          *n++;
+     }
+     else
+     {
+          for(i=*n;i>=p;i--)
+          {
+              tab[i+1]=tab[i];
+          }
+          tab[p]=e;
+          *n=*n+1;
      }
 }
