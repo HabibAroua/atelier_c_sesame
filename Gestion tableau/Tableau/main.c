@@ -5,6 +5,8 @@ void saisie(int *n);
 void remplir(int n , int *tab);
 void afficher(int n , int tab[50]);
 void insertion(int e , int p , int *n , int *tab);
+void supprimer(int p , int *n , int *tab);
+void modifier(int e , int p , int *n , int *tab);
 
 int main()
 {
@@ -16,6 +18,9 @@ int main()
     printf("\n");
     insertion(15,2,&n,tab);
     afficher(n,tab);
+    supprimer(3,&n,tab);
+    afficher(n,tab);
+    printf("\n");
     printf("la valeur de n2 est %d \n",n);
     return 0;
 }
@@ -48,6 +53,7 @@ void afficher(int n , int tab[50])
      {
          printf("%d |",tab[i]);
      }
+     printf("\n");
 }
 
 void insertion(int e , int p , int *n , int *tab)
@@ -68,4 +74,26 @@ void insertion(int e , int p , int *n , int *tab)
           tab[p]=e;
           *n=*n+1;
      }
+}
+
+void supprimer(int p , int *n , int *tab)
+{
+     int i;
+     if(*n==p)
+     {
+         *n=*n-1;
+     }
+     else
+     {
+          for(i=p;i<*n;i++)
+          {
+               tab[i]=tab[i+1];
+          }
+          *n=*n-1;
+     }
+}
+
+void modifier(int e , int p , int *n , int *tab)
+{
+    tab[p]=e;
 }
