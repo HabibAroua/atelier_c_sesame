@@ -7,9 +7,11 @@ void afficher(int n , int tab[50]);
 void insertion(int e , int p , int *n , int *tab);
 void supprimer(int p , int *n , int *tab);
 void modifier(int e , int p , int *n , int *tab);
+void tri(int *tab , int n);
 
 int main()
 {
+/*
     int n;
     int tab[50];
     saisie(&n);
@@ -22,6 +24,28 @@ int main()
     afficher(n,tab);
     printf("\n");
     printf("la valeur de n2 est %d \n",n);
+    tri(tab,n);
+    printf("\n");
+    afficher(n,tab);
+    */
+    int choix;
+    do
+    {
+          printf("**************Menu*****************\n");
+          printf("1)Afficher le tableau****************\n");
+          printf("2)Remplir le tableau ****************\n");
+          printf("3)Ajouter un element*****************\n");
+          printf("4)Supprimer un element***************\n");
+          printf("5)Modifier un element****************\n");
+          printf("6)Inserer un element*****************\n");
+          printf("7)Quitter****************************\n");
+          printf("*************************************\n");
+          printf("\n");
+          printf("Tapez votre choix \n");
+          scanf("%d",&choix);
+          system("clear");
+    }while(choix!=7);
+
     return 0;
 }
 
@@ -96,4 +120,23 @@ void supprimer(int p , int *n , int *tab)
 void modifier(int e , int p , int *n , int *tab)
 {
     tab[p]=e;
+}
+
+void tri(int *tab , int n)
+{
+     int nb,i,aux;
+     do
+     {
+         nb=0;
+         for(i=0 ; i<n ; i++)
+         {
+              if(tab[i]>tab[i+1])
+              {
+                   aux=tab[i];
+                   tab[i]=tab[i+1];
+                   tab[i+1]=aux;
+                   nb++;
+              }
+         }
+     }while(nb!=0);
 }
