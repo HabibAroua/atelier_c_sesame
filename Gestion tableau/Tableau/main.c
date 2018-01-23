@@ -11,39 +11,69 @@ void tri(int *tab , int n);
 
 int main()
 {
-/*
+
     int n;
     int tab[50];
-    saisie(&n);
-    remplir(n,tab);
-    afficher(n,tab);
-    printf("\n");
-    insertion(15,2,&n,tab);
-    afficher(n,tab);
-    supprimer(3,&n,tab);
-    afficher(n,tab);
-    printf("\n");
-    printf("la valeur de n2 est %d \n",n);
-    tri(tab,n);
-    printf("\n");
-    afficher(n,tab);
-    */
     int choix;
+    int p,e;
+    saisie(&n);
     do
     {
-          printf("**************Menu*****************\n");
-          printf("1)Afficher le tableau****************\n");
-          printf("2)Remplir le tableau ****************\n");
+          printf("**************Menu*******************\n");
+          printf("1)Remplir le tableau*****************\n");
+          printf("2)Afficher le tableau ***************\n");
           printf("3)Ajouter un element*****************\n");
           printf("4)Supprimer un element***************\n");
           printf("5)Modifier un element****************\n");
-          printf("6)Inserer un element*****************\n");
+          printf("6)Trier le tableau*******************\n");
           printf("7)Quitter****************************\n");
           printf("*************************************\n");
           printf("\n");
-          printf("Tapez votre choix \n");
-          scanf("%d",&choix);
-          system("clear");
+          do
+          {
+               printf("Tapez votre choix \n");
+               scanf("%d",&choix);
+               switch(choix)
+               {
+                    case 1 : remplir(n,tab);
+                    break;
+                    case 2 : afficher(n,tab);
+                    break;
+                    case 3 : printf("Insérer un élément \n");
+                             do
+                             {
+                                 printf("Donner la position \n");
+                                 scanf("%d",&p);
+                             }while((p>n)||(p<1));
+                             printf("Donner un nombre pour l'inserer \n");
+                             scanf("%d",&e);
+                             insertion(e,p,&n,tab);
+                    break;
+                    case 4 : do
+                             {
+                                 printf("Donner la position \n");
+                                 scanf("%d",&p);
+                             }while((p>n)||(p<1));
+                             supprimer(p,&n,tab);
+                    break;
+                    case 5 :
+                             do
+                             {
+                                 printf("Donner la position \n");
+                                 scanf("%d",&p);
+                             }while((p>n)||(p<1));
+                             printf("Donner le valeur \n");
+                             scanf("%d",&e);
+                             modifier(e,p,&n,tab);
+                    break;
+                    case 6 : tri(tab,n);
+                    break;
+                    case 7 :  system("clear");
+                              printf("Fin d'éxecustion \n");
+                    break;
+                    default : printf("\n");
+               }
+          }while((choix<1)||choix>7);
     }while(choix!=7);
 
     return 0;
