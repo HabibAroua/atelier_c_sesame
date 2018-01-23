@@ -15,7 +15,7 @@ int main()
     afficher(n,M);
     printf("\n");
     Trier(n,M);
-    //afficher(n,M);
+    afficher(n,M);
     return 0;
 }
 
@@ -72,6 +72,7 @@ void Trier(int n , int M[20][20])
     }
     do
     {
+         nb=0;
          for (k=0 ; k<n*n-1 ; k++)
          {
               if(t[k]>t[k+1])
@@ -83,6 +84,16 @@ void Trier(int n , int M[20][20])
               }
          }
     }while(nb!=0);
-
+    k=0;
+    for(i=0 ; i<n ; i++)
+    {
+       for( j=0 ; j<n ; j++)
+       {
+            M[i][j]=t[k];
+            k++;
+       }
+    }
     printf("\n");
 }
+
+
