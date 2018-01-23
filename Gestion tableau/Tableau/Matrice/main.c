@@ -6,11 +6,13 @@ void remplir(int n , int M[20][20]);
 void afficher(int n , int M[20][20]);
 void Trier(int n , int M[20][20]);
 void Inverser(int n , int M[20][20]);
+void Pascal(int P[8][8]);
 
 int main()
 {
     int n,choix;
     int M[20][20];
+    int P[8][8];
     saisie(&n);
     do
     {
@@ -19,7 +21,8 @@ int main()
          printf("2)Trier la matrice****************************\n");
          printf("3)Inverser la matrice*************************\n");
          printf("4)Afficher************************************\n");
-         printf("5)Quitter*************************************\n");
+         printf("5)Triangle de Pascal**************************\n");
+         printf("6)Quitter*************************************\n");
          printf("**********************************************\n");
          printf("\n");
          do
@@ -37,13 +40,15 @@ int main()
                   break;
                   case 4 : afficher(n,M);
                   break;
-                  case 5 : system("clear");
+                  case 5 : Pascal(P);
+                  break;
+                  case 6 : system("clear");
                            printf("Vous quittez cette appliquation \n");
                   default : printf("Vérifier votre choix \n");
                   break;
               }
-         }while((choix < 1 ) || (choix >5));
-    }while(choix != 5);
+         }while((choix < 1 ) || (choix >6));
+    }while(choix != 6);
     return 0;
 }
 
@@ -139,4 +144,31 @@ void Inverser(int n , int M[20][20])
          printf("\n");
      }
      printf("\n");
+}
+void Pascal(int P[8][8])
+{
+    int i,j;
+    for(i=0;i<8;i++)
+    {
+        for(j=0 ; j<i ; j++)
+        {
+             if ( (i==j) || (j==0) )
+             {
+                  P[i][j]=1;
+             }
+             else
+             {
+                 P[i][j]=P[i-1][j-1]+P[i][j-1];
+             }
+        }
+    }
+
+    for(i=0;i<8;i++)
+    {
+        for(j=0 ; j<i ; j++)
+        {
+            printf("%d ",P[i][j]);
+        }
+        printf("\n");
+    }
 }
