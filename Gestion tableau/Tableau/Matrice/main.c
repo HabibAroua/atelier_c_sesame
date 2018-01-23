@@ -14,7 +14,16 @@ int main()
     saisie(&n);
     do
     {
-    }while()
+         printf("*******************Menu***********************\n");
+         printf("1)Remplir la matrice**************************\n");
+         printf("3)Trier la matrice****************************\n");
+         printf("4)Inverser la matrice*************************\n");
+         printf("5)Quitter*************************************\n");
+         printf("**********************************************\n");
+         printf("\n");
+         printf("Donner votre choix \n");
+         scanf("%d",&choix);
+    }while(choix<1 || choix>5);
     return 0;
 }
 
