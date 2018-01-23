@@ -16,14 +16,34 @@ int main()
     {
          printf("*******************Menu***********************\n");
          printf("1)Remplir la matrice**************************\n");
-         printf("3)Trier la matrice****************************\n");
-         printf("4)Inverser la matrice*************************\n");
+         printf("2)Trier la matrice****************************\n");
+         printf("3)Inverser la matrice*************************\n");
+         printf("4)Afficher************************************\n");
          printf("5)Quitter*************************************\n");
          printf("**********************************************\n");
          printf("\n");
-         printf("Donner votre choix \n");
-         scanf("%d",&choix);
-    }while(choix<1 || choix>5);
+         do
+         {
+              printf("Donner votre choix \n");
+              scanf("%d",&choix);
+              system("clear");
+              switch(choix)
+              {
+                  case 1 : remplir(n,M);
+                  break;
+                  case 2 : Trier(n,M);
+                  break;
+                  case 3 : Inverser(n,M);
+                  break;
+                  case 4 : afficher(n,M);
+                  break;
+                  case 5 : system("clear");
+                           printf("Vous quittez cette appliquation \n");
+                  default : printf("Vérifier votre choix \n");
+                  break;
+              }
+         }while((choix < 1 ) || (choix >5));
+    }while(choix != 5);
     return 0;
 }
 
