@@ -5,17 +5,16 @@ void saisie(int *n);
 void remplir(int n , int M[20][20]);
 void afficher(int n , int M[20][20]);
 void Trier(int n , int M[20][20]);
+void Inverser(int n , int M[20][20]);
 
 int main()
 {
-    int n;
+    int n,choix;
     int M[20][20];
     saisie(&n);
-    remplir(n,M);
-    afficher(n,M);
-    printf("\n");
-    Trier(n,M);
-    afficher(n,M);
+    do
+    {
+    }while()
     return 0;
 }
 
@@ -96,4 +95,19 @@ void Trier(int n , int M[20][20])
     printf("\n");
 }
 
-
+void Inverser(int n , int M[20][20])
+{
+     printf("\n");
+     int i=0,j,aux;
+     for(i=0 ; i<n ; i++)
+     {
+         for(j=0 ; j<i ; j++)
+         {
+              aux=M[i][j];
+              M[i][j]=M[j][i];
+              M[j][i]=aux;
+         }
+         printf("\n");
+     }
+     printf("\n");
+}
