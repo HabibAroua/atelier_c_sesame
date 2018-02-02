@@ -7,9 +7,18 @@ void afficher(int n , int M[20][20]);
 void Trier(int n , int M[20][20]);
 void Inverser(int n , int M[20][20]);
 void Pascal(int P[8][8]);
-
+void saisie1(int *n);
+void saisie1(int *n)
+{
+     printf("Donner n \n");
+     scanf("%d",n);
+}
 int main()
 {
+    int n;
+    saisie1(&n);
+    printf("Le valeur de n est %d \n",n);
+/*
     int n,choix;
     int M[20][20];
     int P[8][8];
@@ -49,6 +58,7 @@ int main()
               }
          }while((choix < 1 ) || (choix >6));
     }while(choix != 6);
+    */
     return 0;
 }
 
