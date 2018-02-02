@@ -26,6 +26,6 @@ int main(void)
     }
     fclose(f_in);
     fclose(f_out);
-    //hhh
+    system("cat sortie.txt");
     return (EXIT_SUCCESS);
 }
