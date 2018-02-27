@@ -12,6 +12,7 @@ void ListeVide(ListeEntier *L);
 void creeListe(ListeEntier **L);
 void AjoutFin(ListeEntier **L);
 void AffichListe(ListeEntier *L);
+void LibererListe(ListeEntier *L);
 
 int main()
 {
@@ -68,5 +69,16 @@ void AffichListe(ListeEntier *L)
      for(p=L; p!=NULL; p=p->suivant)
      {
            printf(" %d- ", p->valeur);
+     }
+}
+
+void LibererListe(ListeEntier *L)
+{
+     ListeEntier *p;
+     while(L !=NULL)
+     {
+         p=L;
+         L=L->suivant;
+         free(p);
      }
 }
