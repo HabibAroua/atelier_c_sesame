@@ -11,12 +11,15 @@ typedef struct Maillon ListeEntier;
 void ListeVide(ListeEntier *L);
 void creeListe(ListeEntier **L);
 void AjoutFin(ListeEntier **L);
+void AffichListe(ListeEntier *L);
 
 int main()
 {
    ListeEntier *L ;
    creeListe(&L);
-   printf("%d \n",L->valeur);
+   AjoutFin(&L);
+   AjoutFin(&L);
+   AffichListe(L);
 
 
     return 0;
@@ -56,5 +59,14 @@ void AjoutFin(ListeEntier **L)
               l=l->suivant;
          }
          l->suivant=p;
+     }
+}
+
+void AffichListe(ListeEntier *L)
+{
+     ListeEntier *p;
+     for(p=L; p!=NULL; p=p->suivant)
+     {
+           printf(" %d- ", p->valeur);
      }
 }
