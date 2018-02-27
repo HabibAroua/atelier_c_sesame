@@ -9,11 +9,12 @@ struct Maillon
 
 typedef struct Maillon ListeEntier;
 void ListeVide(ListeEntier *L);
-void creeListe(ListeEntier *L);
+void creeListe(ListeEntier **L);
 int main()
 {
    ListeEntier *L ;
-   ListeVide(L);
+   creeListe(&L);
+   printf("%d \n",L->valeur);
 
 
     return 0;
@@ -24,12 +25,12 @@ void ListeVide(ListeEntier *L)
      L=NULL;
 }
 
-void creeListe(ListeEntier *L)
+void creeListe(ListeEntier **L)
 {
     ListeEntier *p;
     p=(ListeEntier*)malloc(sizeof(ListeEntier));
     printf ("Entrer un entier \n");
     scanf ("%d", &(p->valeur));
     p->suivant=NULL;
-    L=p;
+    *L=p;
 }
