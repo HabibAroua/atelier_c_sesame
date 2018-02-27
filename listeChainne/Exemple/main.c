@@ -18,4 +18,5 @@ int main()
 
 void ListeVide(ListeEntier *L)
 {
+     L=NULL;
 }
