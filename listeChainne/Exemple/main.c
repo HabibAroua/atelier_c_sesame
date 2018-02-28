@@ -68,7 +68,7 @@ void AffichListe(ListeEntier *L)
      ListeEntier *p;
      for(p=L; p!=NULL; p=p->suivant)
      {
-           printf(" %d- ", p->valeur);
+           printf(" %d ", p->valeur);
      }
 }
 
