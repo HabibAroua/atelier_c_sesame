@@ -14,6 +14,7 @@ void AjoutDebut(ListeEntier **L)
 void AjoutFin(ListeEntier **L);
 void AffichListe(ListeEntier *L);
 void LibererListe(ListeEntier *L);
+int Recherche(ListeEntier *L, int val)
 
 int main()
 {
@@ -92,4 +93,20 @@ void LibererListe(ListeEntier *L)
          L=L->suivant;
          free(p);
      }
+}
+
+int Recherche(ListeEntier *L, int val)
+{
+     ListeEntier *p;
+     int trouve=0;
+     p=L;
+     while (p!=NULL && trouve==0)
+     {
+         if (p->valeur==val)
+         {
+               trouve=1;
+         }
+         p=p->suivant;
+     }
+     return(trouve);
 }
