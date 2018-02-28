@@ -20,10 +20,11 @@ void Supprimer(ListeEntier **L, int val)
 int main()
 {
    ListeEntier *L ;
-   creeListe(&L);
-   AjoutFin(&L);
-   AjoutFin(&L);
-   AffichListe(L);
+   int choix;
+   do
+   {
+
+   }while();
 
 
     return 0;
