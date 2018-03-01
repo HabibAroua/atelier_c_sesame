@@ -10,12 +10,12 @@ struct Maillon
 typedef struct Maillon ListeEntier;
 void ListeVide(ListeEntier *L);
 void creeListe(ListeEntier **L);
-void AjoutDebut(ListeEntier **L)
+void AjoutDebut(ListeEntier **L);
 void AjoutFin(ListeEntier **L);
 void AffichListe(ListeEntier *L);
 void LibererListe(ListeEntier *L);
-int Exist(ListeEntier *L, int val)
-void Supprimer(ListeEntier **L, int val)
+int Exist(ListeEntier *L, int val);
+void Supprimer(ListeEntier **L, int val);
 
 int main()
 {
@@ -23,7 +23,7 @@ int main()
    int choix;
    do
    {
-        printf("_____________________________________________________\n")
+        printf("_____________________________________________________\n");
         printf("|________________________Menu________________________|\n");
         printf("|1)Ajouter au debut__________________________________|\n");
         printf("|2)Ajouter à la fin__________________________________|\n");
@@ -33,8 +33,12 @@ int main()
         printf("|6)Libérer___________________________________________|\n");
         printf("|7)Quitter___________________________________________|\n");
         printf("|____________________________________________________|\n");
-
-   }while();
+        do
+        {
+             printf("Donner votre choix \n");
+             scanf("%d",&choix);
+        }while((choix>7)&&(choix<1));
+   }while(choix!=7);
 
 
     return 0;
