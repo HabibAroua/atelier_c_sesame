@@ -20,7 +20,8 @@ void Supprimer(ListeEntier **L, int val);
 int main()
 {
    ListeEntier *L ;
-   int choix;
+   int choix,test,val;
+   creeListe(&L);
    do
    {
         printf("_____________________________________________________\n");
@@ -38,6 +39,35 @@ int main()
              printf("Donner votre choix \n");
              scanf("%d",&choix);
         }while((choix>7)&&(choix<1));
+        switch(choix)
+        {
+            case 1 : AjoutDebut(&L);
+            break;
+            case 2 : AjoutFin(&L);
+            break;
+            case 3 : AffichListe(L);
+            break;
+            case 4 : printf("Donner un valeur \n");
+                     scanf("%d",&val);
+                     test=Exist(L,val);
+                     if(test==1)
+                     {
+                          printf("ce valeur est Exist \n");
+                     }
+                     else
+                     {
+                          printf("ce valeur n'existe pas \n");
+                     }
+            break;
+            case 5 : printf("Donner un valeur \n");
+                     scanf("%d",&val);
+                     Supprimer(&L,val);
+            break;
+            case 6 : LibererListe(&L);
+            break;
+            default : printf("Vérifier votre choix \n");
+            break;
+        }
    }while(choix!=7);
 
 
@@ -96,8 +126,9 @@ void AffichListe(ListeEntier *L)
      ListeEntier *p;
      for(p=L; p!=NULL; p=p->suivant)
      {
-           printf(" %d ", p->valeur);
+          printf(" %d ", p->valeur);
      }
+     printf("\n");
 }
 
 void LibererListe(ListeEntier *L)
