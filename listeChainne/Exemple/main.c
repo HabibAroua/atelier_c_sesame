@@ -124,9 +124,11 @@ void AjoutFin(ListeEntier **L)
 void AffichListe(ListeEntier *L)
 {
      ListeEntier *p;
-     for(p=L; p!=NULL; p=p->suivant)
+     p=L;
+     while(p!=NULL)
      {
           printf(" %d ", p->valeur);
+          p=p->suivant;
      }
      printf("\n");
 }
