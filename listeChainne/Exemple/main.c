@@ -16,6 +16,7 @@ void AffichListe(ListeEntier *L);
 void LibererListe(ListeEntier *L);
 int Exist(ListeEntier *L, int val);
 void Supprimer(ListeEntier **L, int val);
+ListeEntier supprimerElementEnTete(ListeEntier *L);
 
 int main()
 {
@@ -30,7 +31,7 @@ int main()
         printf("|2)Ajouter à la fin__________________________________|\n");
         printf("|3)Afficher la liste_________________________________|\n");
         printf("|4)Vérifier un élément exist ou non__________________|\n");
-        printf("|5)Suprimer__________________________________________|\n");
+        printf("|5)Suprimer debut____________________________________|\n");
         printf("|6)Libérer___________________________________________|\n");
         printf("|7)Quitter___________________________________________|\n");
         printf("|____________________________________________________|\n");
@@ -59,9 +60,9 @@ int main()
                           printf("ce valeur n'existe pas \n");
                      }
             break;
-            case 5 : printf("Donner un valeur \n");
-                     scanf("%d",&val);
-                     Supprimer(&L,val);
+            case 5 : //printf("Donner un valeur \n");
+                     //scanf("%d",&val);
+                     supprimerElementEnTete(&L);
             break;
             case 6 : LibererListe(&L);
             break;
@@ -185,4 +186,11 @@ void Supprimer(ListeEntier **L, int val)
           }
           free(p);
      }
+}
+
+ListeEntier supprimerElementEnTete(ListeEntier *L)
+{
+
+
+
 }
