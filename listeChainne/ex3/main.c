@@ -22,24 +22,20 @@ int main()
 void creeListe(ListeEntier **L)
 {
     ListeEntier *p,*l;
+    int x;
     p=(ListeEntier*)malloc(sizeof(ListeEntier));
     printf ("Entrer un entier \n");
-    scanf ("%d", &(p->valeur));
-    if(*L==NULL)
-     {
-         *L=p;
-     }
-     else
-     {
-         l=*L;
-         while(l->suivant!=NULL)
-         {
-              l=l->suivant;
-         }
-         l->suivant=p;
-     }
-    p->suivant=NULL;
-    *L=p;
+    scanf ("%d", &x);
+    p->valeur=x;
+    if(L!=NULL)
+    {
+        p->suivant=NULL;
+        *L=p;
+    }
+    else
+    {
+
+    }
 }
 
 void AffichListe(ListeEntier *L)
