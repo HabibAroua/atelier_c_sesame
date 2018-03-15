@@ -9,6 +9,7 @@ struct element
 };
 
 typedef element* llist;
+llist ajouterEnTete(llist liste, int valeur);
 
 int main()
 {
@@ -18,4 +19,12 @@ int main()
     struct element *ma_liste3 = NULL;
 
     return 0;
+}
+
+llist ajouterEnTete(llist liste, int valeur)
+{
+    element* nouvelElement = malloc(sizeof(element));
+    nouvelElement->val = valeur;
+    nouvelElement->nxt = liste;
+    return nouvelElement;
 }
