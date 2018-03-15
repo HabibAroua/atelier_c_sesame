@@ -25,6 +25,9 @@ int main()
         ma_liste = ajouterEnFin(ma_liste, i);
     }
     afficherListe(ma_liste);
+    initializer(&ma_liste);
+    printf("**************\n");
+    afficherListe(ma_liste);
 
     return 0;
 }
