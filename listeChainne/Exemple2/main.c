@@ -11,12 +11,20 @@ struct element
 typedef element* llist;
 llist ajouterEnTete(llist liste, int valeur);
 llist ajouterEnFin(llist liste, int valeur);
+void afficherListe(llist liste);
+void initializer(llist *liste);
 
 int main()
 {
-    llist ma_liste1 = NULL;
-    element *ma_liste2 = NULL;
-    struct element *ma_liste3 = NULL;
+    llist ma_liste = NULL;
+    int i;
+
+    for(i=1;i<=10;i++)
+    {
+        ma_liste = ajouterEnTete(ma_liste, i);
+        ma_liste = ajouterEnFin(ma_liste, i);
+    }
+    afficherListe(ma_liste);
 
     return 0;
 }
@@ -59,4 +67,9 @@ void afficherListe(llist liste)
         printf("%d ", tmp->val);
         tmp = tmp->nxt;
     }
+}
+
+void initializer(llist *liste)
+{
+     *liste=NULL;
 }
