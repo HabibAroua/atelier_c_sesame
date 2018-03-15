@@ -12,6 +12,10 @@ typedef element* llist;
 
 int main()
 {
-    printf("Hello world!\n");
+    /* Déclarons 3 listes chaînées de façons différentes mais équivalentes */
+    llist ma_liste1 = NULL;
+    element *ma_liste2 = NULL;
+    struct element *ma_liste3 = NULL;
+
     return 0;
 }
