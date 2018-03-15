@@ -14,7 +14,6 @@ llist ajouterEnFin(llist liste, int valeur);
 
 int main()
 {
-    /* Déclarons 3 listes chaînées de façons différentes mais équivalentes */
     llist ma_liste1 = NULL;
     element *ma_liste2 = NULL;
     struct element *ma_liste3 = NULL;
@@ -49,5 +48,15 @@ llist ajouterEnFin(llist liste, int valeur)
         }
         temp->nxt = nouvelElement;
         return liste;
+    }
+}
+
+void afficherListe(llist liste)
+{
+    element *tmp = liste;
+    while(tmp != NULL)
+    {
+        printf("%d ", tmp->val);
+        tmp = tmp->nxt;
     }
 }
