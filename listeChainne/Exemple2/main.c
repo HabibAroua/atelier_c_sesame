@@ -13,6 +13,7 @@ llist ajouterEnTete(llist liste, int valeur);
 llist ajouterEnFin(llist liste, int valeur);
 void afficherListe(llist liste);
 void initializer(llist *liste);
+int isEmpty(llust liste);
 
 int main()
 {
@@ -75,4 +76,16 @@ void afficherListe(llist liste)
 void initializer(llist *liste)
 {
      *liste=NULL;
+}
+
+int isEmpty(llust liste)
+{
+      if(liste==NULL)
+      {
+            return 1;
+      }
+      else
+      {
+            return 0;
+      }
 }
