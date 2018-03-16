@@ -14,6 +14,7 @@ llist ajouterEnFin(llist liste, int valeur);
 void afficherListe(llist liste);
 void initializer(llist *liste);
 int isEmpty(llust liste);
+llist supprimerElementEnTete(llist liste);
 
 int main()
 {
@@ -88,4 +89,18 @@ int isEmpty(llust liste)
       {
             return 0;
       }
+}
+
+llist supprimerElementEnTete(llist liste)
+{
+    if(liste != NULL)
+    {
+        element* aRenvoyer = liste->nxt;
+        free(liste);
+        return aRenvoyer;
+    }
+    else
+    {
+        return NULL;
+    }
 }
