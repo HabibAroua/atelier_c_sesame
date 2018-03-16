@@ -13,7 +13,7 @@ llist ajouterEnTete(llist liste, int valeur);
 llist ajouterEnFin(llist liste, int valeur);
 void afficherListe(llist liste);
 void initializer(llist *liste);
-int isEmpty(llust liste);
+int isEmpty(llist liste);
 llist supprimerElementEnTete(llist liste);
 
 int main()
@@ -27,8 +27,9 @@ int main()
         ma_liste = ajouterEnFin(ma_liste, i);
     }
     afficherListe(ma_liste);
-    initializer(&ma_liste);
-    printf("**************\n");
+    printf("\n");
+    ma_liste=supprimerElementEnTete(ma_liste);
+    printf("*****\n");
     afficherListe(ma_liste);
 
     return 0;
@@ -79,7 +80,7 @@ void initializer(llist *liste)
      *liste=NULL;
 }
 
-int isEmpty(llust liste)
+int isEmpty(llist liste)
 {
       if(liste==NULL)
       {
