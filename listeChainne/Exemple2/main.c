@@ -16,6 +16,7 @@ void initializer(llist *liste);
 int isEmpty(llist liste);
 llist supprimerElementEnTete(llist liste);
 llist supprimerElementEnFin(llist liste);
+llist rechercherElement(llist liste, int valeur);
 
 int main()
 {
@@ -36,7 +37,6 @@ int main()
     ma_liste=supprimerElementEnFin(ma_liste);
     printf("*****\n");
     afficherListe(ma_liste);
-
     return 0;
 }
 
@@ -133,4 +133,18 @@ llist supprimerElementEnFin(llist liste)
     ptmp->nxt = NULL;
     free(tmp);
     return liste;
+}
+
+llist rechercherElement(llist liste, int valeur)
+{
+    element *tmp=liste;
+    while(tmp != NULL)
+    {
+        if(tmp->val == valeur)
+        {
+            return tmp;
+        }
+        tmp = tmp->nxt;
+    }
+    return NULL;
 }
