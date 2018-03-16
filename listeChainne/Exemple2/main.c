@@ -15,6 +15,7 @@ void afficherListe(llist liste);
 void initializer(llist *liste);
 int isEmpty(llist liste);
 llist supprimerElementEnTete(llist liste);
+llist supprimerElementEnFin(llist liste);
 
 int main()
 {
@@ -29,6 +30,10 @@ int main()
     afficherListe(ma_liste);
     printf("\n");
     ma_liste=supprimerElementEnTete(ma_liste);
+    printf("*****\n");
+    afficherListe(ma_liste);
+    printf("\n");
+    ma_liste=supprimerElementEnFin(ma_liste);
     printf("*****\n");
     afficherListe(ma_liste);
 
@@ -104,4 +109,28 @@ llist supprimerElementEnTete(llist liste)
     {
         return NULL;
     }
+}
+
+llist supprimerElementEnFin(llist liste)
+{
+    if(liste == NULL)
+    {
+        return NULL;
+    }
+
+    if(liste->nxt == NULL)
+    {
+        free(liste);
+        return NULL;
+    }
+    element* tmp = liste;
+    element* ptmp = liste;
+    while(tmp->nxt != NULL)
+    {
+        ptmp = tmp;
+        tmp = tmp->nxt;
+    }
+    ptmp->nxt = NULL;
+    free(tmp);
+    return liste;
 }
