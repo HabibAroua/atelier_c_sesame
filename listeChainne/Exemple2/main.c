@@ -17,7 +17,7 @@ int isEmpty(llist liste);
 llist supprimerElementEnTete(llist liste);
 llist supprimerElementEnFin(llist liste);
 llist rechercherElement(llist liste, int valeur);
-
+int saisie();
 int main()
 {
     llist ma_liste = NULL;
@@ -34,6 +34,19 @@ int main()
              printf("____________________________\n");
              printf("Donnez votre choix \n");
              scanf("%d",&choix);
+             switch(choix)
+             {
+                  case 1 : ma_liste=ajouterEnTete(ma_liste,saisie());
+                  break;
+                  case 2 : ma_liste=ajouterEnFin(ma_liste,saisie());
+                  break;
+                  case 3 : afficherListe(ma_liste); printf("\n");
+                  break;
+                  case 4 : printf("Vous quittez l'application \n");
+                  break;
+                  default : printf("Choix invalide \n");
+                  break;
+             }
         }while((choix<1)||(choix>4));
     }while(choix!=4);
     return 0;
@@ -146,4 +159,12 @@ llist rechercherElement(llist liste, int valeur)
         tmp = tmp->nxt;
     }
     return NULL;
+}
+
+int saisie()
+{
+    int n;
+    printf("Donnez un nombre \n");
+    scanf("%d",&n);
+    return n;
 }
