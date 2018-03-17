@@ -21,22 +21,7 @@ llist rechercherElement(llist liste, int valeur);
 int main()
 {
     llist ma_liste = NULL;
-    int i;
 
-    for(i=1;i<=10;i++)
-    {
-        ma_liste = ajouterEnTete(ma_liste, i);
-        ma_liste = ajouterEnFin(ma_liste, i);
-    }
-    afficherListe(ma_liste);
-    printf("\n");
-    ma_liste=supprimerElementEnTete(ma_liste);
-    printf("*****\n");
-    afficherListe(ma_liste);
-    printf("\n");
-    ma_liste=supprimerElementEnFin(ma_liste);
-    printf("*****\n");
-    afficherListe(ma_liste);
     return 0;
 }
 
