@@ -21,7 +21,21 @@ llist rechercherElement(llist liste, int valeur);
 int main()
 {
     llist ma_liste = NULL;
-
+    int choix;
+    do
+    {
+        do
+        {
+             printf("____________Menu____________\n");
+             printf("1)Ajouter au debut__________\n");
+             printf("2)Ajouter à la fin__________\n");
+             printf("3)Afficher la liste_________\n");
+             printf("4)Quitter___________________\n");
+             printf("____________________________\n");
+             printf("Donnez votre choix \n");
+             scanf("%d",&choix);
+        }while((choix<1)||(choix>4));
+    }while(choix!=4);
     return 0;
 }
 
