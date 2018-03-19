@@ -8,6 +8,7 @@ struct Maillon
 };
 
 typedef struct Maillon ListeEntier;
+
 void ListeVide(ListeEntier *L);
 void creeListe(ListeEntier **L);
 void AjoutDebut(ListeEntier **L);
