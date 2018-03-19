@@ -17,6 +17,7 @@ int isEmpty(llist liste);
 llist supprimerElementEnTete(llist liste);
 llist supprimerElementEnFin(llist liste);
 llist rechercherElement(llist liste, int valeur);
+void rechercher(llist liste, int valeur);
 int saisie();
 int main()
 {
@@ -167,4 +168,30 @@ int saisie()
     printf("Donnez un nombre \n");
     scanf("%d",&n);
     return n;
+}
+
+void rechercher(llist liste, int valeur)
+{
+    int test;
+    element *tmp = liste;
+    while(tmp != NULL)
+    {
+         if(tmp->val==valeur)
+         {
+              test=1;
+              break;
+         }
+         else
+         {
+             test=0;
+         }
+    }
+    if(test==1)
+    {
+        printf("%d est Exist dans la liste \n",valeur);
+    }
+    else
+    {
+        printf("%d est n'existe pas dans la liste \n",valeur);
+    }
 }
