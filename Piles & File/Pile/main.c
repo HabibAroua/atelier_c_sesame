@@ -16,6 +16,12 @@ struct Pile
 
 int main()
 {
-
+    int choix;
+    //menu
+    printf("______Menu______\n");
+    printf("1)Empiler_______\n");
+    printf("2)Depiler_______\n");
+    printf("3)Quitter_______\n");
+    printf("________________\n");
     return 0;
 }
