@@ -31,7 +31,8 @@ int main()
              printf("1)Ajouter au debut__________\n");
              printf("2)Ajouter à la fin__________\n");
              printf("3)Afficher la liste_________\n");
-             printf("4)Quitter___________________\n");
+             printf("4)Chercher un element_______\n");
+             printf("5)Quitter___________________\n");
              printf("____________________________\n");
              printf("Donnez votre choix \n");
              scanf("%d",&choix);
@@ -43,13 +44,15 @@ int main()
                   break;
                   case 3 : afficherListe(ma_liste); printf("\n");
                   break;
-                  case 4 : printf("Vous quittez l'application \n");
+                  case 4 : rechercher(ma_liste,saisie());
+                  break;
+                  case 5 : printf("Vous quittez l'application \n");
                   break;
                   default : printf("Choix invalide \n");
                   break;
              }
-        }while((choix<1)||(choix>4));
-    }while(choix!=4);
+        }while((choix<1)||(choix>5));
+    }while(choix!=5);
     return 0;
 }
 
@@ -183,6 +186,7 @@ void rechercher(llist liste, int valeur)
          }
          else
          {
+             tmp=tmp->nxt;
              test=0;
          }
     }
