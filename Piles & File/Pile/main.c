@@ -18,10 +18,18 @@ int main()
 {
     int choix;
     //menu
-    printf("______Menu______\n");
-    printf("1)Empiler_______\n");
-    printf("2)Depiler_______\n");
-    printf("3)Quitter_______\n");
-    printf("________________\n");
+    do
+    {
+        do
+        {
+            printf("______Menu______\n");
+            printf("1)Empiler_______\n");
+            printf("2)Depiler_______\n");
+            printf("3)Quitter_______\n");
+            printf("________________\n");
+            printf("Donnez votre choix \n");
+            scanf("%d",&choix);
+        }while((choix<1) || (choix>3) );
+    }while(choix!=3);
     return 0;
 }
