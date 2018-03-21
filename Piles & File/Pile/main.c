@@ -29,6 +29,15 @@ int main()
             printf("________________\n");
             printf("Donnez votre choix \n");
             scanf("%d",&choix);
+            switch(choix)
+            {
+                 case 1 : printf("Empiler \n");
+                 break;
+                 case 2 : printf("Depiler \n");
+                 break;
+                 case 3 : printf("Vous quittez l'application \n");
+                 break ;
+            }
         }while((choix<1) || (choix>3) );
     }while(choix!=3);
     return 0;
