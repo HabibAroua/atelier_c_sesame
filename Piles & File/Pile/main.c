@@ -14,6 +14,7 @@ struct Pile
     Element *premier;
 };
 void empiler(Pile *pile, int nvNombre);
+int depiler(Pile *pile);
 
 int main()
 {
@@ -55,4 +56,24 @@ void empiler(Pile *pile, int nvNombre)
     nouveau->nombre = nvNombre;
     nouveau->suivant = pile->premier;
     pile->premier = nouveau;
+}
+
+int depiler(Pile *pile)
+{
+    if (pile == NULL)
+    {
+        exit(EXIT_FAILURE);
+    }
+
+    int nombreDepile = 0;
+    Element *elementDepile = pile->premier;
+
+    if (pile != NULL && pile->premier != NULL)
+    {
+        nombreDepile = elementDepile->nombre;
+        pile->premier = elementDepile->suivant;
+        free(elementDepile);
+    }
+
+    return nombreDepile;
 }
