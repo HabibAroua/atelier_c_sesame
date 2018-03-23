@@ -15,6 +15,7 @@ struct Pile
 };
 void empiler(Pile *pile, int nvNombre);
 int depiler(Pile *pile);
+void afficherPile(Pile *pile);
 
 int main()
 {
@@ -76,4 +77,21 @@ int depiler(Pile *pile)
     }
 
     return nombreDepile;
+}
+
+void afficherPile(Pile *pile)
+{
+    if (pile == NULL)
+    {
+        exit(EXIT_FAILURE);
+    }
+    Element *actuel = pile->premier;
+
+    while (actuel != NULL)
+    {
+        printf("%d\n", actuel->nombre);
+        actuel = actuel->suivant;
+    }
+
+    printf("\n");
 }
