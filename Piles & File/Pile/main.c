@@ -21,6 +21,7 @@ int saisie();
 int main()
 {
     int choix;
+    Pile *maPile = NULL;
     //menu
     do
     {
@@ -35,7 +36,7 @@ int main()
             scanf("%d",&choix);
             switch(choix)
             {
-                 case 1 : printf("Empiler \n");
+                 case 1 : empiler(&maPile,saisie());
                  break;
                  case 2 : printf("Depiler \n");
                  break;
@@ -104,3 +105,5 @@ int saisie()
      scanf("%d",&x);
      return x;
 }
+
+
