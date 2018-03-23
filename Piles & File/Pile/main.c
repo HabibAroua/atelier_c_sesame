@@ -16,6 +16,7 @@ struct Pile
 void empiler(Pile *pile, int nvNombre);
 int depiler(Pile *pile);
 void afficherPile(Pile *pile);
+int saisie();
 
 int main()
 {
@@ -94,4 +95,12 @@ void afficherPile(Pile *pile)
     }
 
     printf("\n");
+}
+
+int saisie()
+{
+     int x;
+     printf("Donnez un entier \n");
+     scanf("%d",&x);
+     return x;
 }
