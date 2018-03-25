@@ -20,7 +20,7 @@ int saisie();
 
 int main()
 {
-    int choix;
+    int choix,nb;
     Pile *maPile = NULL;
     //menu
     do
@@ -39,7 +39,8 @@ int main()
             {
                  case 1 : empiler(&maPile,saisie());
                  break;
-                 case 2 : maPile=depiler(maPile);
+                 case 2 : nb=depiler(&maPile);
+                          printf("il reste %d element \n",nb-1);
                  break;
                  case 3 : afficherPile(&maPile);
                  break ;
