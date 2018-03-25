@@ -30,7 +30,8 @@ int main()
             printf("______Menu______\n");
             printf("1)Empiler_______\n");
             printf("2)Depiler_______\n");
-            printf("3)Quitter_______\n");
+            printf("3)Afficher______\n");
+            printf("4)Quiiter_______\n");
             printf("________________\n");
             printf("Donnez votre choix \n");
             scanf("%d",&choix);
@@ -38,13 +39,17 @@ int main()
             {
                  case 1 : empiler(&maPile,saisie());
                  break;
-                 case 2 : printf("Depiler \n");
+                 case 2 : maPile=depiler(maPile);
                  break;
-                 case 3 : printf("Vous quittez l'application \n");
+                 case 3 : afficherPile(&maPile);
                  break ;
+                 case 4 : printf("Vous quittez l'application \n");
+                 break;
+                 default : printf("Choix invalide \n");
+                 break;
             }
-        }while((choix<1) || (choix>3) );
-    }while(choix!=3);
+        }while((choix<1) || (choix>4) );
+    }while(choix!=4);
     return 0;
 }
 
@@ -105,5 +110,3 @@ int saisie()
      scanf("%d",&x);
      return x;
 }
-
-
