@@ -16,7 +16,7 @@ struct File
 void enfiler(File *file, int nvNombre);
 int defiler(File *file);
 void afficher();
-int saisie(File *f);
+int saisie();
 
 int main()
 {
@@ -38,7 +38,7 @@ int main()
               {
                   case 1 : enfiler(&f,saisie());
                   break;
-                  case 2 : printf("Defiler \n");
+                  case 2 : defiler(&f);
                   break;
                   case 3 : printf("Afficher File");
                            afficher(&f);
