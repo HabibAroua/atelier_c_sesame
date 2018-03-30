@@ -15,6 +15,7 @@ struct File
 };
 void enfiler(File *file, int nvNombre);
 int defiler(File *file);
+void afficher();
 int saisie();
 
 int main()
@@ -35,7 +36,7 @@ int main()
               scanf("%d",&choix);
               switch(choix)
               {
-                  case 1 : printf("Emfiler \n");
+                  case 1 : enfiler(&f,saisie());
                   break;
                   case 2 : printf("Defiler \n");
                   break;
@@ -104,5 +105,9 @@ int saisie()
     int x;
     printf("Donner un nombre \n");
     scanf("%d",&x);
-    return x:
+    return x;
+}
+
+void afficher()
+{
 }
