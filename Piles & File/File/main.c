@@ -15,6 +15,7 @@ struct File
 };
 void enfiler(File *file, int nvNombre);
 int defiler(File *file);
+int saisie();
 
 int main()
 {
@@ -95,6 +96,13 @@ int defiler(File *file)
         file->premier = elementDefile->suivant;
         free(elementDefile);
     }
-
     return nombreDefile;
+}
+
+int saisie()
+{
+    int x;
+    printf("Donner un nombre \n");
+    scanf("%d",&x);
+    return x:
 }
