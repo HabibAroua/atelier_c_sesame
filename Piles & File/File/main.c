@@ -19,6 +19,7 @@ int defiler(File *file);
 int main()
 {
     int choix;
+    File *f=NULL;
     do
     {
          do
