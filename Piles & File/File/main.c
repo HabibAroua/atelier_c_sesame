@@ -16,7 +16,7 @@ struct File
 void enfiler(File *file, int nvNombre);
 int defiler(File *file);
 void afficher();
-int saisie();
+int saisie(File *f);
 
 int main()
 {
@@ -40,7 +40,8 @@ int main()
                   break;
                   case 2 : printf("Defiler \n");
                   break;
-                  case 3 : printf("Afficher \n");
+                  case 3 : printf("Afficher File");
+                           afficher(&f);
                   break;
                   case 4 : printf("Vous quittez l'application \n");
                   break;
@@ -108,6 +109,18 @@ int saisie()
     return x;
 }
 
-void afficher()
+void afficher(File *f)
 {
+    if (f == NULL)
+    {
+        exit(EXIT_FAILURE);
+    }
+    Element *actuel = f->premier;
+
+    while (actuel != NULL)
+    {
+        printf("%d\n", actuel->nombre);
+        actuel = actuel->suivant;
+    }
+    printf("\n");
 }
