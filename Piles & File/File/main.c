@@ -16,7 +16,7 @@ int main()
               printf("________________________\n");
               printf("Donner votre choix \n");
               scanf("%d",&choix);
-         }while((choix<1)||(choix>4))
+         }while((choix<1)||(choix>4));
     }while(choix!=4);
     return 0;
 }
