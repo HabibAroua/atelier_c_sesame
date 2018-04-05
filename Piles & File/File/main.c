@@ -16,7 +16,6 @@ void enfiler(File *file, int nvNombre);
 int defiler(File *file);
 void afficher();
 int saisie();
-
 int main()
 {
     int choix;
@@ -57,7 +56,7 @@ void enfiler(File *file, int nvNombre)
     Element *nouveau = malloc(sizeof(*nouveau));
     if (file == NULL || nouveau == NULL)
     {
-        exit(EXIT_FAILURE);
+        //exit(EXIT_FAILURE);
     }
 
     nouveau->nombre = nvNombre;
@@ -83,7 +82,7 @@ int defiler(File *file)
 {
     if (file == NULL)
     {
-        exit(EXIT_FAILURE);
+        //exit(EXIT_FAILURE);
     }
 
     int nombreDefile = 0;
@@ -112,7 +111,7 @@ void afficher(File *f)
 {
     if (f == NULL)
     {
-        exit(EXIT_FAILURE);
+        //exit(EXIT_FAILURE);
     }
     Element *actuel = f->premier;
 
