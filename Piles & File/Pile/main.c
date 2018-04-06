@@ -89,7 +89,7 @@ int depiler(Pile *pile)
 
 void afficherPile(Pile *pile)
 {
-    if (pile == NULL)
+    /*if (pile == NULL)
     {
         exit(EXIT_FAILURE);
     }
@@ -99,7 +99,14 @@ void afficherPile(Pile *pile)
     {
         printf("%d\n", actuel->nombre);
         actuel = actuel->suivant;
+    }*/
+    Pile *p1=pile;
+    while(p1->premier->suivant!= NULL)
+    {
+        printf("%d \n",p1->premier->nombre);
+        depiler(p1);
     }
+
 
     printf("\n");
 }
