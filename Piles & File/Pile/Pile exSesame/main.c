@@ -3,6 +3,6 @@
 
 int main()
 {
-    printf("Hello world!\n");
+    //waiting the course
     return 0;
 }
