@@ -7,8 +7,19 @@ typedef struct
     int nb_elem_max; /* capacité de la pile */
     TypeDonnee *tab; /* tableau contenant les éléments */
 }Pile;
+
 int main()
 {
     //waiting the course
     return 0;
+}
+
+Pile Initialiser(int nb_max)
+{
+    Pile pilevide;
+    pilevide.nb_elem = 0; /* la pile est vide */
+    pilevide.nb_elem_max = nb_max; /* capacité nb_max */
+    /* allocation des éléments : */
+    pilevide.tab = (TypeDonnee*)malloc(nb_max*sizeof(TypeDonnee));
+    return pilevide;
 }
