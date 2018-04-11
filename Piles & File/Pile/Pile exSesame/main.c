@@ -23,3 +23,9 @@ Pile Initialiser(int nb_max)
     pilevide.tab = (TypeDonnee*)malloc(nb_max*sizeof(TypeDonnee));
     return pilevide;
 }
+
+int EstVide(Pile P)
+{
+    /* retourne 1 si le nombre d’éléments vaut 0 */
+    return (P.nb_elem == 0) ? 1 : 0;
+}
