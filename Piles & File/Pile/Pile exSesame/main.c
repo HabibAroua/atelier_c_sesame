@@ -57,3 +57,14 @@ int Empiler(Pile* pP, TypeDonnee elem)
     pP->nb_elem++; /* incrémentation du nombre d’éléments */
     return 0;
 }
+
+char Depiler(Pile *pP, TypeDonnee *pelem)
+{
+    if (EstVide(*pP))
+    {
+         return 1; /* on ne peut pas supprimer d’élément */
+    }
+    *pelem = pP->tab[pP->nb_elem-1]; /* on renvoie le sommet */
+    pP->nb_elem--; /* décrémentation du nombre d’éléments */
+    return 0;
+}
