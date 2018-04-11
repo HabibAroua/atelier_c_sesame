@@ -68,3 +68,18 @@ char Depiler(Pile *pP, TypeDonnee *pelem)
     pP->nb_elem--; /* décrémentation du nombre d’éléments */
     return 0;
 }
+
+void Vider(Pile *pP)
+{
+     pP->nb_elem = 0; /* réinitialisation du nombre d’éléments */
+}
+
+void Detruire(Pile *pP)
+{
+     if (pP->nb_elem_max != 0)
+     {
+          free(pP->tab); /* libération de mémoire */
+     }
+     pP->nb_elem = 0;
+     pP->nb_elem_max = 0; /* pile de taille 0 */
+}
