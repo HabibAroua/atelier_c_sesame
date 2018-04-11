@@ -46,3 +46,14 @@ int AccederSommet(Pile P, TypeDonnee *pelem)
     *pelem = P.tab[P.nb_elem-1]; /* on renvoie l’élément */
     return 0;
 }
+
+int Empiler(Pile* pP, TypeDonnee elem)
+{
+    if (EstPleine(*pP))
+    {
+         return 1; /* on ne peut pas rajouter d’élément */
+    }
+    pP->tab[pP->nb_elem] = elem; /* ajout d’un élément */
+    pP->nb_elem++; /* incrémentation du nombre d’éléments */
+    return 0;
+}
