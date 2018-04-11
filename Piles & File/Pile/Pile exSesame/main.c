@@ -36,3 +36,13 @@ int EstPleine(Pile P)
     /* au nombre d’éléments maximum et 0 sinon */
     return (P.nb_elem >= P.nb_elem_max) ? 1 : 0;
 }
+
+int AccederSommet(Pile P, TypeDonnee *pelem)
+{
+    if (EstVide(P))
+    {
+          return 1; /* on retourne un code d’erreur */
+    }
+    *pelem = P.tab[P.nb_elem-1]; /* on renvoie l’élément */
+    return 0;
+}
