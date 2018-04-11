@@ -29,3 +29,10 @@ int EstVide(Pile P)
     /* retourne 1 si le nombre d’éléments vaut 0 */
     return (P.nb_elem == 0) ? 1 : 0;
 }
+
+int EstPleine(Pile P)
+{
+    /* retourne 1 si le nombre d’éléments est supérieur */
+    /* au nombre d’éléments maximum et 0 sinon */
+    return (P.nb_elem >= P.nb_elem_max) ? 1 : 0;
+}
