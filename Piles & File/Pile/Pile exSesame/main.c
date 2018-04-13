@@ -10,7 +10,7 @@ typedef struct
 
 int main()
 {
-    //waiting the course
+    //testing the code
     return 0;
 }
 
