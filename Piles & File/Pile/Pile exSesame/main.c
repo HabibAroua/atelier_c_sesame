@@ -10,7 +10,13 @@ typedef struct
 
 int main()
 {
-    //testing the code
+    Pile pilevide;
+    pilevide.nb_elem = 0; /* la pile est vide */
+    pilevide.nb_elem_max = 50; /* capacité nb_max */
+    /* allocation des éléments : */
+    pilevide.tab = (int*)malloc(50*sizeof(int));
+    Empiler(&pilevide,2);
+
     return 0;
 }
 
@@ -47,7 +53,7 @@ int AccederSommet(Pile P, TypeDonnee *pelem)
     return 0;
 }
 
-int Empiler(Pile* pP, TypeDonnee elem)
+int Empiler(Pile* pP, int elem)
 {
     if (EstPleine(*pP))
     {
