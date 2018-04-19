@@ -8,10 +8,16 @@
 int main()
 {
     FILE* fichier = NULL;
+    char caractereActuel;
     fichier = fopen(ENTREE, "r+");
     if (fichier != NULL)
     {
-        printf("On peut lire et écrire dans le fichier \n");
+        do
+        {
+            caractereActuel = fgetc(fichier); // On lit le caractère
+            printf("%c", caractereActuel); // On l'affiche
+        } while (caractereActuel != EOF); // On continue tant que fgetc n'a pas retourné EOF
+        fclose(fichier);
     }
     else
     {
