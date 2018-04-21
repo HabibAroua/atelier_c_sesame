@@ -21,7 +21,7 @@ struct Pile
 
 int main()
 {
-    Pile p;
+    Pile *maPile =NULL;
     FILE* fichier = NULL;
     char caractereActuel;
     fichier = fopen(ENTREE, "r+");
@@ -32,7 +32,7 @@ int main()
             caractereActuel = fgetc(fichier); // On lit le caractère
             printf("%c", caractereActuel); // On l'affiche
             if((caractereActuel=='(') || (caractereActuel=='{') || (caractereActuel=='['))
-            empiler(&p,caractereActuel);
+            empiler(&maPile,caractereActuel);
         } while (caractereActuel != EOF); // On continue tant que fgetc n'a pas retourné EOF
         fclose(fichier);
     }
@@ -41,7 +41,8 @@ int main()
         // On affiche un message d'erreur si on veut
         printf("Impossible d'ouvrir le fichier test.txt");
     }
-    afficherPile(&p);
+    afficherPile(&maPile);
+
     return 0;
 }
 
@@ -80,10 +81,17 @@ int depiler(Pile *pile)
 
 void afficherPile(Pile *pile)
 {
-    Pile tmp = *pile;
-    while(tmp != NULL)
+    if (pile == NULL)
     {
-        printf("%c ", tmp->premier.val);
-        tmp = tmp->premier.suivant;
+        exit(EXIT_FAILURE);
     }
+    Element *actuel = pile->premier;
+
+    while (actuel != NULL)
+    {
+        printf("%c\n", actuel->val);
+        actuel = actuel->suivant;
+    }
+
+    printf("\n");
 }
