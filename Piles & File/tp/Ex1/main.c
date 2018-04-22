@@ -33,6 +33,7 @@ int main()
             caractereActuel = fgetc(fichier); // On lit le caractère
             printf("%c", caractereActuel); // On l'affiche
             Empiler(&p,caractereActuel);
+            break;
         } while (caractereActuel != EOF); // On continue tant que fgetc n'a pas retourné EOF
         fclose(fichier);
     }
@@ -42,6 +43,11 @@ int main()
         printf("Impossible d'ouvrir le fichier test.txt");
     }
     Empiler(&p,'x');
+    Empiler(&p,'y');
+    Empiler(&p,'z');
+    affichePile(p);
+    Depiler(&p);
+    printf("Afficher after depiler \n");
     affichePile(p);
     return 0;
 }
@@ -79,5 +85,20 @@ void affichePile(Pile p)
     {
         printf("La pile est %c \n",p->donnee);
         p=p->suivant;
+    }
+}
+
+void Depiler(Pile *p)
+{
+    Pile q;
+    if(!Pile_vide(p))
+    {
+         q=*p;
+         *p=(*p)->suivant;
+         free(q);
+    }
+    else
+    {
+         printf("La pile est vide \n");
     }
 }
