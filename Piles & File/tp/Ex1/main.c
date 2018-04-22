@@ -20,10 +20,9 @@ typedef TypeCellule* Pile; /* la pile est un pointeur */
 int main()
 {
     Pile p;
-    //Init_Pile(&p);
-    Empiler(&p,'a');
-    char a=p->donnee;
-    printf("le 1er element is %c \n",a);
+    p=NULL;
+    //Empiler(&p,'a');
+    //affichePile(p);
     FILE* fichier = NULL;
     char caractereActuel;
     fichier = fopen(ENTREE, "r+");
@@ -33,6 +32,8 @@ int main()
         {
             caractereActuel = fgetc(fichier); // On lit le caractère
             printf("%c", caractereActuel); // On l'affiche
+            Empiler(&p,caractereActuel);
+            break;
         } while (caractereActuel != EOF); // On continue tant que fgetc n'a pas retourné EOF
         fclose(fichier);
     }
@@ -41,6 +42,8 @@ int main()
         // On affiche un message d'erreur si on veut
         printf("Impossible d'ouvrir le fichier test.txt");
     }
+    Empiler(&p,'x');
+    affichePile(p);
     return 0;
 }
 
@@ -50,7 +53,7 @@ void Init_Pile(Pile *p)
     p=p1;
 }
 
-int Pile_vide(struct Pile *p)
+int Pile_vide(Pile *p)
 {
      if(p==NULL)
      {
@@ -65,8 +68,17 @@ int Pile_vide(struct Pile *p)
 void Empiler(Pile *p , TypeDonnee c)
 {
     Pile q;
-    q = (TypeCellule*)malloc(sizeof(TypeCellule));
+    q = (TypeCellule*)malloc(sizeof(TypeCellule)*100);
     q->donnee=c;
-    q->suivant=p;
+    q->suivant=*p;
     *p=q;
+}
+
+void affichePile(Pile p)
+{
+    while(p!=NULL)
+    {
+        printf("La pile est %c \n",p->donnee);
+        p=p->suivant;
+    }
 }
