@@ -5,24 +5,25 @@
 #include <errno.h>
 #define ENTREE "texte.txt"
 
-typedef struct Element Element;
-struct Element
+typedef char TypeDonnee;
+typedef struct Cell
 {
-    char val;
-    Element *suivant;
-};
+    TypeDonnee donnee;
+    struct Cell *suivant; /* pointeur sur la cellule suivante */
+}TypeCellule;
 
-typedef struct Pile Pile;
-struct Pile
-{
-    Element *premier;
-};
+typedef TypeCellule* Pile; /* la pile est un pointeur */
+/* sur la tête de liste */
+
 
 
 int main()
 {
-    Pile *maPile =NULL;
-    Pile *invPile=NULL;
+    Pile p;
+    //Init_Pile(&p);
+    Empiler(&p,'a');
+    char a=p->donnee;
+    printf("le 1er element is %c \n",a);
     FILE* fichier = NULL;
     char caractereActuel;
     fichier = fopen(ENTREE, "r+");
@@ -32,10 +33,6 @@ int main()
         {
             caractereActuel = fgetc(fichier); // On lit le caractère
             printf("%c", caractereActuel); // On l'affiche
-            if((caractereActuel=='(') || (caractereActuel=='{') || (caractereActuel=='['))
-            {
-                 empiler(&maPile,caractereActuel);
-            }
         } while (caractereActuel != EOF); // On continue tant que fgetc n'a pas retourné EOF
         fclose(fichier);
     }
@@ -44,65 +41,32 @@ int main()
         // On affiche un message d'erreur si on veut
         printf("Impossible d'ouvrir le fichier test.txt");
     }
-    afficherPile(&maPile);
-    printf("_________\n");
-    empiler(&invPile,(char)sommet(&maPile));
-    afficherPile(&invPile);
-    printf("Le sommet est %c \n",(char)sommet(&invPile));
-
     return 0;
 }
 
-void empiler(Pile *pile, char nvNombre)
+void Init_Pile(Pile *p)
 {
-    Element *nouveau = malloc(sizeof(*nouveau));
-    if (pile == NULL || nouveau == NULL)
-    {
-        exit(EXIT_FAILURE);
-    }
-
-    nouveau->val = nvNombre;
-    nouveau->suivant = pile->premier;
-    pile->premier = nouveau;
+    struct Pile *p1=NULL;
+    p=p1;
 }
 
-int depiler(Pile *pile)
+int Pile_vide(struct Pile *p)
 {
-    if (pile == NULL)
-    {
-        exit(EXIT_FAILURE);
-    }
-
-    int nombreDepile = 0;
-    Element *elementDepile = pile->premier;
-
-    if (pile != NULL && pile->premier != NULL)
-    {
-        nombreDepile = elementDepile->val;
-        pile->premier = elementDepile->suivant;
-        free(elementDepile);
-    }
-
-    return nombreDepile;
+     if(p==NULL)
+     {
+           return 1;
+     }
+     else
+     {
+           return 0;
+     }
 }
 
-void afficherPile(Pile *pile)
+void Empiler(Pile *p , TypeDonnee c)
 {
-    if (pile == NULL)
-    {
-        exit(EXIT_FAILURE);
-    }
-    Element *actuel = pile->premier;
-
-    while (actuel != NULL)
-    {
-        printf("%c\n", actuel->val);
-        actuel = actuel->suivant;
-    }
-    printf("\n");
-}
-
-int sommet(Pile *p1)
-{
-    return (int)p1->premier->val;
+    Pile q;
+    q = (TypeCellule*)malloc(sizeof(TypeCellule));
+    q->donnee=c;
+    q->suivant=p;
+    *p=q;
 }
