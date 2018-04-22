@@ -1,1 +1,1 @@
-(exemple : {a(bc[d])[{e f }(g)]} )
+(Hello { [lle] } () )

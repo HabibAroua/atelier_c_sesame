@@ -21,8 +21,10 @@ int main()
 {
     Pile p;
     p=NULL;
-    //Empiler(&p,'a');
-    //affichePile(p);
+    Pile pInv;
+    pInv=NULL;
+    Pile pRev;
+    pRev=NULL;
     FILE* fichier = NULL;
     char caractereActuel;
     fichier = fopen(ENTREE, "r+");
@@ -32,8 +34,17 @@ int main()
         {
             caractereActuel = fgetc(fichier); // On lit le caractère
             printf("%c", caractereActuel); // On l'affiche
-            Empiler(&p,caractereActuel);
-            break;
+            if((caractereActuel=='(') || (caractereActuel=='{') || (caractereActuel=='['))
+            {
+                 Empiler(&p,caractereActuel);
+            }
+            else
+            {
+                 if((caractereActuel==')') || (caractereActuel=='}') || (caractereActuel==']'))
+                 {
+                      Empiler(&pInv,caractereActuel);
+                 }
+            }
         } while (caractereActuel != EOF); // On continue tant que fgetc n'a pas retourné EOF
         fclose(fichier);
     }
@@ -42,13 +53,12 @@ int main()
         // On affiche un message d'erreur si on veut
         printf("Impossible d'ouvrir le fichier test.txt");
     }
-    Empiler(&p,'x');
-    Empiler(&p,'y');
-    Empiler(&p,'z');
-    affichePile(p);
-    Depiler(&p);
-    printf("Afficher after depiler \n");
-    affichePile(p);
+    //verif(&p,&pInv);
+    affichePile(pInv);
+    inverserPile(&pInv,&pRev);
+    printf("Apres l'inversion \n");
+    affichePile(pRev);
+    verif(&p,&pRev);
     return 0;
 }
 
@@ -100,5 +110,67 @@ void Depiler(Pile *p)
     else
     {
          printf("La pile est vide \n");
+    }
+}
+
+void verif(Pile *p1 , Pile *p2)
+{
+    int test;
+    do
+    {
+       if(((*p1)->donnee=='(') && ((*p2)->donnee==')'))
+       {
+           test=1;
+           printf("vrai ()\n");
+       }
+       else
+       {
+             if(((*p1)->donnee=='[') && ((*p2)->donnee==']'))
+             {
+                 test=1;
+                 printf("vrai []\n");
+             }
+             else
+             {
+                   if(((*p1)->donnee=='{') && ((*p2)->donnee=='}'))
+                   {
+                       test=1;
+                       printf("vrai {}\n");
+                   }
+                   else
+                   {
+                        test=0;
+                        printf("Erreur in this bloc \n");
+                        break;
+                   }
+             }
+       }
+       if(test==1)
+       {
+           Depiler(p1);
+           Depiler(p2);
+           //break;
+       }
+       if(((*p1)==NULL) || ((*p2)==NULL))
+       {
+          break;
+       }
+    }while(test==1);
+    if(test==1)
+    {
+          printf("est vari \n");
+    }
+    else
+    {
+          printf("Erreur \n");
+    }
+}
+
+void inverserPile(Pile *p1 , Pile *p2)
+{
+    while((*p1)!=NULL)
+    {
+         Empiler(p2,(*p1)->donnee);
+         Depiler(p1);
     }
 }
