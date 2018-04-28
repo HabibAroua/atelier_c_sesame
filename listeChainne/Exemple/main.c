@@ -27,6 +27,7 @@ int main()
     printf("Ajout au fin \n");
     L=AjoutFin(L);
     AfficheListe(L);
+    //function main testing true
     return 0;
 }
 
