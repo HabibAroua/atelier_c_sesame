@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include <math.h>
-int carre(int n);
+
 int main()
 {
     const float  PI=4*atan(1);
