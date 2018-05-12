@@ -14,6 +14,19 @@ struct list
     Arbre *node;
     List *next;
 };
+int taille(Arbre *noeud);
+List *cons(Arbre *arbre, List *liste);
+
+int main(void)
+{
+    Arbre G = {'G', NULL}, H = {'H', NULL}, I = {'I', NULL};
+    Arbre F = {'F', cons(&G, cons(&H, cons(&I, NULL)))};
+    Arbre D = {'D', NULL}, E = {'E', NULL};
+    Arbre C = {'C', cons(&F, NULL)};
+    Arbre B = {'B', cons(&D, cons(&E, NULL))};
+    Arbre A = {'A', cons(&B, cons(&C, NULL))};
+    return 0;
+}
 
 List *cons(Arbre *arbre, List *liste)
 {
@@ -25,13 +38,11 @@ List *cons(Arbre *arbre, List *liste)
     return elem;
 }
 
-int main(void)
+int taille(Arbre *noeud)
 {
-    Arbre G = {'G', NULL}, H = {'H', NULL}, I = {'I', NULL};
-    Arbre F = {'F', cons(&G, cons(&H, cons(&I, NULL)))};
-    Arbre D = {'D', NULL}, E = {'E', NULL};
-    Arbre C = {'C', cons(&F, NULL)};
-    Arbre B = {'B', cons(&D, cons(&E, NULL))};
-    Arbre A = {'A', cons(&B, cons(&C, NULL))};
-    return 0;
+    List *enfants;
+    int compteur = 1;
+    for (enfants = noeud->enfants; enfants != NULL; enfants = enfants->next)
+        compteur += taille(enfants->node);
+    return compteur;
 }
