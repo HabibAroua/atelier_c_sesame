@@ -25,6 +25,7 @@ int main(void)
     Arbre C = {'C', cons(&F, NULL)};
     Arbre B = {'B', cons(&D, cons(&E, NULL))};
     Arbre A = {'A', cons(&B, cons(&C, NULL))};
+    //Tree algorithme
     return 0;
 }
 
