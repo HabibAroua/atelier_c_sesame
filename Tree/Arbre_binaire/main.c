@@ -13,6 +13,14 @@ typedef struct StackElement
     struct StackElement *next;
 }StackElement , *Stack;
 
+Stack new_stack(void);
+Bool is_empty_stack(Stack st);
+void print_stack(Stack st);
+Stack push_stack(Stack x , int val);
+Stack pop_stack(Stack st);
+int top_stack(Stack st);
+int stack_length(Stack st);
+
 int main()
 {
     return 0;
