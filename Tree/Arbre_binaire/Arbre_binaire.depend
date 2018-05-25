@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1527181892 source:/home/habib/Documents/atelier_c_sesame-master/Tree/Arbre_binaire/main.c
+	<stdio.h>
+	<stdlib.h>
+
