@@ -21,7 +21,3 @@ Stack pop_stack(Stack st);
 int top_stack(Stack st);
 int stack_length(Stack st);
 
-int main()
-{
-    return 0;
-}
