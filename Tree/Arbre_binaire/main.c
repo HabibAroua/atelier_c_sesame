@@ -1,5 +1,5 @@
 #include "tree.h"
-
+#include<stdio.h>
 /**
 * Créée un nouvel Arbre
 * @param x La valeur de la racine
