@@ -110,6 +110,10 @@ int count_tree_nodes(Tree *tr)
 
 int main()
 {
-    printf("Hello world \n");
+    Tree t;
+    t=*new_tree(5);
+    t=*new_tree(6);
+    t=*new_tree(7);
+    printf("there are %d nodes \n",count_tree_nodes(&t));
     return 0;
 }
