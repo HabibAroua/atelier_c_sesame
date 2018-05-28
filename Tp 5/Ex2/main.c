@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
-int main()
+#include<stdlib.h>
+
+int main(void)
 {
     int jour;
     char ch[10];
