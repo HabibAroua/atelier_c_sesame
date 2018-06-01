@@ -1,9 +1,10 @@
 #include <stdio.h>
+
 void saisir(int *n);
 void remplir(int n,int *t);
 void afficher(int n,int t[20]);
 
-int main()
+int main(void)
 {
     int n;
     int t[20]={0};
